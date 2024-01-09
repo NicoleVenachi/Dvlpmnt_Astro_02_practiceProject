@@ -1,5 +1,13 @@
 ---
+
+interface Props {
+  pageTitle: string;
+}
+
 import "../styles/Layout.css"
+
+const {pageTitle} = Astro.props;
+
 ---
 
 
@@ -8,9 +16,13 @@ import "../styles/Layout.css"
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Astro Landing</title>
+  <title> Astro Landing - {pageTitle} </title>
 </head>
 <body>
-  <slot/>
+
+  <main class="mx-auto container bg-red-400">
+    <slot/>
+  </main>
+
 </body>
 </html>
